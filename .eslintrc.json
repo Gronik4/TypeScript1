@@ -1,7 +1,7 @@
 {
     "env": {
         "browser": true,
-        "es2021": true,
+        "es6": true,
         "jest": true
     },
     "extends": [
@@ -15,15 +15,34 @@
     "plugins": [
         "@typescript-eslint"
     ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [ ".js", ".jsx", ".ts", ".tsx" ]
+            }
+        }
+    },
     "rules": {
         "no-restricted-syntax": [
             "error",
             "LabeledStatement",
             "WithStatement"
           ],
+        "no-unused-vars": "off", // add this
         "import/no-named-as-default": 0,
         "import/no-named-as-default-member": 0,
         "guard-for-in" : 0,
-        "no-underscore-dangle": [2, { "allowAfterThis": true }]
+        "no-underscore-dangle": [2, { "allowAfterThis": true }],
+        "no-console": 0,
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ]
     }
 }

@@ -20,10 +20,10 @@ export default class Cart {
   }
 
   deleteItem(idList: number): boolean {
-    const length = this._items.length;
-    const ind = this._items.findIndex((item) => item.id === idList);
-    if (ind < 0) { return false; }
-    this._items.splice(ind, 1);
-    return length - 1 === this._items.length;
+    if (this._items.some((even) => even.id === idList)) {
+      this._items = this._items.filter((member) => member.id !== idList);
+      return true;
+    }
+    return false;
   }
 }
