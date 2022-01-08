@@ -30,6 +30,7 @@
           ],
         "no-unused-vars": "off", // add this
         "semi": "off",
+        "@typescript-eslint/semi": ["error"],
         "import/no-named-as-default": 0,
         "import/no-named-as-default-member": 0,
         "guard-for-in" : 0,
